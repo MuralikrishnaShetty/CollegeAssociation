@@ -1,0 +1,17 @@
+{% extends 'authenticate/base.html' %}
+
+{% block content %}
+
+{% comment %} <h1>SIT</h1> {% endcomment %}
+
+
+{% if user.is_authenticated %}
+	<p>Welcome {{user.first_name}} {{ user.last_name}}</p>
+	{% comment %} <p>Username: {{user.username}}</p> {% endcomment %}
+	
+	{% comment %} <p>Email: {{user.email}}</p> {% endcomment %}
+
+{% endif %}
+
+{% endblock %}
+

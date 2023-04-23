@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .tablediv{
+            position: relative;
+        }
+        .btndiv{
+            display: flex;
+            height: 130px;
+            justify-content: center;
+            align-items: center;
+        }
+        .pdfbtn{
+            background-color: #199319;
+            color: white;
+            padding: 15px 25px;
+            text-decoration: none;
+        }
+        .pdfbtn:hover {
+            background-color: #174817;
+          }
+        body {
+            background-image: url('https://images.unsplash.com/photo-1521193089946-7aa29d1fe776?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+          }
+        .finance
+        {
+            margin-top:10px;
+            margin-bottom: 10px;
+            border:2px solid black;
+            padding: 10px;
+        }
+        .finance p 
+        {
+            text-align: justify;
+        }
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+          }
+          th,td {
+          padding:5px;
+          }
+    </style>
+</head>
+<body>
+    <center><h1>All Finance Details</h1></center>
+
+   
+    <div class="tablediv">
+    <center>
+    <table>
+        <tr>
+            <th>Date </th>
+            <th>Time</th>
+            <th>posted by</th>
+            <th>Event Name</th>
+            <th> Cost</th>
+        </tr>
+        {% for finance in finances %}
+        <tr>
+            <td>{{finance.date}} </td>
+            <td>{{finance.time}}</td>
+            <td>{{finance.fname}} {{finance.lname}}</td>
+            <td> {{finance.event}}</td>
+            <td> {{finance.cost}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</center>
+<div class="btndiv"><a class="pdfbtn" href="{% url 'create-pdf' %}">Create PDF</a></div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>
+<!-- gkuufogsubzuqpam -->

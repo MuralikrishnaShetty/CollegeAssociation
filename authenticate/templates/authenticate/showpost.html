@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-image: url('https://images.unsplash.com/photo-1521193089946-7aa29d1fe776?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+          }
+        .post 
+        {
+            margin-top:10px;
+            margin-bottom: 10px;
+            border:2px solid black;
+            padding: 10px;
+        } 
+        
+        .post p 
+        {
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>All Posts</h1></center>
+
+    {% for post in posts %}
+    <div class="post">
+        Posted on : {{post.date}} at {{post.time}}
+        <br>
+        posted by : {{post.fname}} {{post.lname}}
+        <br>
+        <img src="{{post.image.url}}" height="70%" width="70%" class="img-thumbnail" alt="user posted image here">
+        <br>
+        <p>
+            {{post.content}}
+        </p>
+    </div>
+    {% endfor %}
+</body>
+</html>
