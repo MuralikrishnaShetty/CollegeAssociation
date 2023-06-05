@@ -1,6 +1,6 @@
-{% comment %} {% extends 'authenticate/base.html' %} {% endcomment %}
+ {% extends 'authenticate/base.html' %} 
 
-{% comment %} {% block content %} {% endcomment %}
+ {% block content %} 
 <html>
 	<head>
 		<!-- Required meta tags -->
@@ -46,7 +46,7 @@
 			</style>
 	</head>
 	<body>
-		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		{% comment %} <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="{% url 'home'  %}">SIT</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -81,7 +81,7 @@
     </ul>
     
   </div>
-</nav>
+</nav> {% endcomment %}
 <br>
 <div class="login-box">
 <h2 class ="text-center"> Login</h2>
@@ -111,4 +111,4 @@
 </html>
 
 
-{% comment %} {% endblock %} {% endcomment %}
+ {% endblock %} 
